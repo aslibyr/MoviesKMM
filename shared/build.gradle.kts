@@ -59,6 +59,7 @@ kotlin {
 android {
     namespace = "com.example.moviekmm"
     compileSdk = 34
+
     defaultConfig {
         minSdk = 24
     }
