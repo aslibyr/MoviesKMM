@@ -9,8 +9,7 @@ class GetMoviesUseCase : KoinComponent {
     private val movieRepository: MovieRepository by inject()
 
     @Throws(Exception::class)
-    suspend operator fun invoke(page: Int = 1): Result<List<Movie>> {
-        return Result.success(movieRepository.getMovies(page))
+    suspend operator fun invoke(page: Int = 1): List<Movie> {
+        return movieRepository.getMovies(page)
     }
-
 }
