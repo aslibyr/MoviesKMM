@@ -3,26 +3,24 @@ package com.example.moviekmm.android
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.atilsamancioglu.kmmmovieapp.android.common.MovieAppBar
-import com.example.moviekmm.android.common.Home
-import com.example.moviekmm.android.common.movieDestinations
 import com.example.moviekmm.android.home.HomeScreen
 import com.example.moviekmm.android.home.HomeViewModel
+import com.example.moviekmm.android.navigation.Detail
+import com.example.moviekmm.android.navigation.Home
+import com.example.moviekmm.android.navigation.movieDestinations
 import org.koin.androidx.compose.koinViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MovieApp(modifier: Modifier = Modifier) {
     val navController = rememberNavController()
-    val snackbarHostState = remember { SnackbarHostState() }
     val backStackEntry = navController.currentBackStackEntryAsState()
 
     val currentScreen = movieDestinations.find {
@@ -33,7 +31,7 @@ fun MovieApp(modifier: Modifier = Modifier) {
         topBar = {
             MovieAppBar(
                 modifier = modifier,
-                canNavigateBack = navController.currentBackStackEntry != null,
+                canNavigateBack = navController.previousBackStackEntry != null,
                 currentScreen = currentScreen,
                 onNavigateBack = {
                     navController.navigateUp()
@@ -52,12 +50,12 @@ fun MovieApp(modifier: Modifier = Modifier) {
                     loadNextMovies = {
                         homeViewModel.loadMovies(forceReload = it)
                     }, navigateToDetail = {
-                        // navController.navigate("${Detail.route}/${it.id}")
+                        navController.navigate("${Detail.route}/${it.id}")
                     })
             }
-//            composable(Detail.routeWithArgs, arguments = Detail.arguments) {
-//                val movieId = it.arguments?.getInt("movieId") ?: 0
-//            }
+            composable(Detail.routeWithArgs, arguments = Detail.arguments) {
+                val movieId = it.arguments?.getInt("movieId") ?: 0
+            }
         }
 
     }

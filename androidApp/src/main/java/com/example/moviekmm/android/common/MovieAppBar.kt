@@ -18,7 +18,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.moviekmm.android.common.Destination
+import com.example.moviekmm.android.navigation.Destination
 
 @Composable
 fun MovieAppBar(
@@ -42,7 +42,7 @@ fun MovieAppBar(
                     Icon(
                         imageVector = Icons.Filled.ArrowBack,
                         contentDescription = null,
-                        tint = MaterialTheme.colorScheme.onPrimary
+                        tint = MaterialTheme.colorScheme.onBackground
                     )
                 }
                 Spacer(modifier = modifier.width(24.dp))

@@ -1,5 +1,6 @@
 package com.example.moviekmm.android.home
 
+import MovieListItem
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
