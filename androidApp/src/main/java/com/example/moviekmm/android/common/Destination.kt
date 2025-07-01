@@ -16,7 +16,7 @@ object Home : Destination {
     override val title: String
         get() = "Movies"
     override val routeWithArgs: String
-        get() = ""
+        get() = route
 }
 
 object Detail : Destination {

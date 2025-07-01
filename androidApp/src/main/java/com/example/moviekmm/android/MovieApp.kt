@@ -11,9 +11,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.moviekmm.android.common.Detail
+import com.atilsamancioglu.kmmmovieapp.android.common.MovieAppBar
 import com.example.moviekmm.android.common.Home
-import com.example.moviekmm.android.common.MovieAppBar
 import com.example.moviekmm.android.common.movieDestinations
 import com.example.moviekmm.android.home.HomeScreen
 import com.example.moviekmm.android.home.HomeViewModel
@@ -36,7 +35,7 @@ fun MovieApp(modifier: Modifier = Modifier) {
                 modifier = modifier,
                 canNavigateBack = navController.currentBackStackEntry != null,
                 currentScreen = currentScreen,
-                onNavigateUp = {
+                onNavigateBack = {
                     navController.navigateUp()
                 },
             )
@@ -53,13 +52,12 @@ fun MovieApp(modifier: Modifier = Modifier) {
                     loadNextMovies = {
                         homeViewModel.loadMovies(forceReload = it)
                     }, navigateToDetail = {
-                        navController.navigate("${Detail.route}/${it.id}")
+                        // navController.navigate("${Detail.route}/${it.id}")
                     })
             }
-            composable(Detail.routeWithArgs, arguments = Detail.arguments) {
-                val movieId = it.arguments?.getInt("movieId") ?: 0
-
-            }
+//            composable(Detail.routeWithArgs, arguments = Detail.arguments) {
+//                val movieId = it.arguments?.getInt("movieId") ?: 0
+//            }
         }
 
     }
