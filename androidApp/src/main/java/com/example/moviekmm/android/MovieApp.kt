@@ -13,9 +13,12 @@ import com.atilsamancioglu.kmmmovieapp.android.common.MovieAppBar
 import com.example.moviekmm.android.navigation.Detail
 import com.example.moviekmm.android.navigation.Home
 import com.example.moviekmm.android.navigation.movieDestinations
+import com.example.moviekmm.android.screens.detail.DetailScreen
+import com.example.moviekmm.android.screens.detail.DetailViewModel
 import com.example.moviekmm.android.screens.home.HomeScreen
 import com.example.moviekmm.android.screens.home.HomeViewModel
 import org.koin.androidx.compose.koinViewModel
+import org.koin.core.parameter.parametersOf
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -55,8 +58,11 @@ fun MovieApp(modifier: Modifier = Modifier) {
             }
             composable(Detail.routeWithArgs, arguments = Detail.arguments) {
                 val movieId = it.arguments?.getInt("movieId") ?: 0
+                val detailViewModel: DetailViewModel = koinViewModel(
+                    parameters = { parametersOf(movieId) }
+                )
+                DetailScreen(uiState = detailViewModel.uiState)
             }
         }
-
     }
 }
