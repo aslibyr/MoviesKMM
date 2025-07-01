@@ -15,6 +15,8 @@ internal data class MovieRemote
     val backdropPath: String?,
     @SerialName("release_date")
     val releaseDate: String,
+    @SerialName("vote_average")
     val voteAverage: Double,
+    @SerialName("vote_count")
     val voteCount: Int
 )
