@@ -1,8 +1,8 @@
-package com.example.moviekmm.util
+package com.example.moviekmm.domain.mapper
 
 import com.example.moviekmm.data.remote.MovieRemote
 
-internal fun MovieRemote.toMovie() = com.example.moviekmm.domain.model.Movie(
+internal fun MovieRemote.toMovie() = com.example.moviekmm.domain.model.MovieModel(
     id = id,
     title = title,
     description = overview,

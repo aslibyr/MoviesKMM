@@ -17,13 +17,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import com.example.moviekmm.domain.model.Movie
+import com.example.moviekmm.domain.model.MovieModel
 
 @Composable
 fun MovieListItem(
     modifier: Modifier = Modifier,
-    movie: Movie,
-    onClick: (Movie) -> Unit
+    movie: MovieModel,
+    onClick: (MovieModel) -> Unit
 ) {
     Card(
         modifier = modifier

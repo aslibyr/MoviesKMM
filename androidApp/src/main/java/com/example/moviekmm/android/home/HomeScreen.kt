@@ -22,7 +22,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.moviekmm.domain.model.Movie
+import com.example.moviekmm.domain.model.MovieModel
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -32,7 +32,7 @@ fun HomeScreen(
     modifier: Modifier = Modifier,
     uiState: HomeScreenState,
     loadNextMovies: (Boolean) -> Unit,
-    navigateToDetail: (Movie) -> Unit
+    navigateToDetail: (MovieModel) -> Unit
 ) {
     PullToRefreshBox(
         modifier = modifier
