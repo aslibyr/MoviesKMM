@@ -1,4 +1,4 @@
-package com.example.moviekmm.android.home
+package com.example.moviekmm.android.screens.home
 
 import com.example.moviekmm.domain.model.MovieModel
 

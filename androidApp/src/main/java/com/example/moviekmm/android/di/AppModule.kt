@@ -1,6 +1,6 @@
 package com.example.moviekmm.android.di
 
-import com.example.moviekmm.android.home.HomeViewModel
+import com.example.moviekmm.android.screens.home.HomeViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

@@ -1,4 +1,4 @@
-package com.example.moviekmm.android.home
+package com.example.moviekmm.android.screens.home
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf

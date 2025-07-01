@@ -10,11 +10,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.atilsamancioglu.kmmmovieapp.android.common.MovieAppBar
-import com.example.moviekmm.android.home.HomeScreen
-import com.example.moviekmm.android.home.HomeViewModel
 import com.example.moviekmm.android.navigation.Detail
 import com.example.moviekmm.android.navigation.Home
 import com.example.moviekmm.android.navigation.movieDestinations
+import com.example.moviekmm.android.screens.home.HomeScreen
+import com.example.moviekmm.android.screens.home.HomeViewModel
 import org.koin.androidx.compose.koinViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)

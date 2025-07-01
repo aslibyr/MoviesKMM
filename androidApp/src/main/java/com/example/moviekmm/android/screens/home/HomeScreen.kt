@@ -1,4 +1,4 @@
-package com.example.moviekmm.android.home
+package com.example.moviekmm.android.screens.home
 
 import MovieListItem
 import androidx.compose.foundation.background

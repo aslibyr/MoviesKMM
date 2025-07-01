@@ -1,4 +1,4 @@
-package com.example.moviekmm.android.common
+package com.example.moviekmm.android.navigation
 
 import androidx.navigation.NavType
 import androidx.navigation.navArgument
