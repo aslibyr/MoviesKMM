@@ -11,15 +11,15 @@ Projenin temel amacı, **platformlar arası kod paylaşımının**, platforma ö
 
 ### Android Ekran Görüntüleri
 
-| Ana Ekran | Detay Ekranı |
-|----------|--------------|
-| ![Android Ana](screenshots/ANDROID_Home.png) | ![Android Detay](screenshots/ANDROID_Detail.png) |
+| Ana Ekran                                     | Detay Ekranı                                      |
+|-----------------------------------------------|---------------------------------------------------|
+| ![ANDROID Home](screenshots/ANDROID_Home.png) | ![ANDROID Detail](screenshots/ANDROID_Detail.png) |
 
 ### iOS Ekran Görüntüleri
 
-| Ana Ekran | Detay Ekranı |
-|----------|--------------|
-| ![iOS Ana](screenshots/IOS_Home.png) | ![iOS Detay](screenshots/IOS_Detail.png) |
+| Ana Ekran                             | Detay Ekranı                              |
+|---------------------------------------|-------------------------------------------|
+| ![IOS Home](screenshots/IOS_Home.png) | ![IOS Detail](screenshots/IOS_Detail.png) |
 
 ---
 
