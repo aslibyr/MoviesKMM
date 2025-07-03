@@ -9,7 +9,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.atilsamancioglu.kmmmovieapp.android.common.MovieAppBar
 import com.example.moviekmm.android.navigation.Detail
 import com.example.moviekmm.android.navigation.Home
 import com.example.moviekmm.android.navigation.movieDestinations
@@ -31,16 +30,9 @@ fun MovieApp(modifier: Modifier = Modifier) {
     } ?: Home
 
     Scaffold(
-        topBar = {
-            MovieAppBar(
-                modifier = modifier,
-                canNavigateBack = navController.previousBackStackEntry != null,
-                currentScreen = currentScreen,
-                onNavigateBack = {
-                    navController.navigateUp()
-                },
-            )
-        }
+        modifier = modifier,
+        topBar = {},
+        bottomBar = {}
     ) { innerPadding ->
         NavHost(
             navController = navController,
@@ -61,7 +53,11 @@ fun MovieApp(modifier: Modifier = Modifier) {
                 val detailViewModel: DetailViewModel = koinViewModel(
                     parameters = { parametersOf(movieId) }
                 )
-                DetailScreen(uiState = detailViewModel.uiState)
+                DetailScreen(
+                    uiState = detailViewModel.uiState,
+                    modifier = modifier,
+                    onBackClick = navController::navigateUp
+                )
             }
         }
     }
