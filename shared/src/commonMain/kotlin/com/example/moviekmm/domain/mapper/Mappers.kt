@@ -7,10 +7,13 @@ internal fun MovieRemote.toMovie() = com.example.moviekmm.domain.model.MovieMode
     title = title,
     description = overview,
     imageUrl = getImageUrl(posterPath),
-    backdropPath = backdropPath,
     releaseDate = releaseDate,
     voteAverage = voteAverage,
     voteCount = voteCount
 )
 
-private fun getImageUrl(posterPath: String?) = "https://image.tmdb.org/t/p/w500$posterPath"
+private fun getImageUrl(posterPath: String?): String {
+    return posterPath?.let {
+        "https://image.tmdb.org/t/p/w500$it"
+    } ?: ""
+}
